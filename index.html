@@ -262,7 +262,6 @@
         <button class="music-control" id="musicBtn" onclick="toggleMusic()" title="Musik On/Off">🔇</button>
         <div id="layerControls" style="display:none; flex-direction:column; gap:10px;">
             <button class="layer-btn active" onclick="switchLayer('normal')" title="Navigasi">🗺️</button>
-            <button class="layer-btn" onclick="switchLayer('dark')" title="Gelap">🌑</button>
             <button class="layer-btn" onclick="switchLayer('satellite')" title="Satelit">🛰️</button>
         </div>
     </div>
@@ -374,7 +373,6 @@
         function initPeta() {
             peta = L.map('map', { center: [-0.35, 115.85], zoom: 9, tap: false });
             layers.normal = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' });
-            layers.dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '© CartoDB' });
             layers.satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: '© Esri' });
             layers.normal.addTo(peta);
             currentLayer = 'normal';
